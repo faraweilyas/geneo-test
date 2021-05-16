@@ -1,0 +1,23 @@
+.message {
+	background: black;
+	color: #FFF;
+	padding: 10px 20px;
+	margin-bottom: 10px;
+	display: block;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.message-success {
+	background: #4CAF50 !important;
+}
+
+.message-error {
+	background: #FF4C4C !important;
+}
+
+.form-secure {
+	background: #c8b7b7;
+}
