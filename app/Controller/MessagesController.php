@@ -77,12 +77,15 @@ class MessagesController extends AppController {
 
 		if ($this->request->is('post')) {
 
+			// Get most recent message sent by user to limit request
 			$ipAddress 			= $this->getUserIP();
 			$message 			= $this->Message->find('first', [
 				'order' 		=> ['Message.created' => 'desc'],
 				'conditions' 	=> ['Message.ip' => $ipAddress]
 			]);
 
+			// If a message was found then check if the time has elapsed
+			// to know whether message will be saved or not
 	        if (!empty($message)):
 				if (!$this->isSubmissionAllowed($message['Message']['created']))
 				{
@@ -92,6 +95,7 @@ class MessagesController extends AppController {
 				}
 	        endif;
 
+	        // redirect if file upload fails but continue if file was uploaded or not
 			$filename = $this->upload_file();
 			if ($filename === false)
 				return $this->redirect(array('action' => 'add'));
