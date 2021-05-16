@@ -65,9 +65,10 @@ class DATABASE_CONFIG {
 	);
 }
 ```
-- Go to your browser and fire up your application using the server link depending on your server configurations, example of mine is: `localhost/geneo-test/messages/add`
+- Go to your browser and fire up your application using the server link depending on your server configurations, example of mine is: `http://localhost/geneo-test/messages/add`
 - Fill the form to submit a message.
-- You can also run test cases by going to: `localhost/geneo-test/test.php`
+- You can also run test cases by going to: `http://localhost/geneo-test/test.php`
+
 
 
 I hope you're able to set it up without any issues but if any issue arises please feel free t contact me: faraweilyas@gmail.com or @[faraweilyas.com](https://faraweilyas.com), cheers 🥂.
