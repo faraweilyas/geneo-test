@@ -1,48 +1,73 @@
-# CakePHP
+# GENEO Application - PHP Exercise
 
-[![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](https://travis-ci.org/cakephp/cakephp)
-[![Code consistency](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/grade.svg)](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/)
+This is a contact form that has the following functionalities:
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+- Has form fields of Name, Email, Message, and ability to upload a File.
+- All fields except File Upload are required.
+- Accepted file formats are .pdf, .xlsx and .csv. All other formats are declined.
+- It makes sure email is valid.
+- It doesn't allow the same user whom has used the form in the last 5 minutes to submit a message then displays a message telling them to wait before they can send a new message.
+- Has unit tests to validate save message feature.
+- Where necessary it displays a message to the user informing them about failures or a successful submission.
+- Has a concise README file that summarises what the app does and includes detailed set up instructions.
+
+# Install with composer
+------------
+
+The best way to add the library to your project is using [composer](http://getcomposer.org).
+```bash
+composer create-project faraweilyas/geneo-test
+```
+or
+
+# Clone this repo
+
+```bash
+git clone https://github.com/faraweilyas/geneo-test.git
+```
+# Install dependencies
+
+Run the bash command below in the app directory of your terminal to install dependencies
+```bash
+composer install
+```
+
+# Configuration
+-------------
+
+Process to set up application
+
+- Find the sql databse structure file in the root dir named `geneo-database.sql` and upload it on your database environment.
+- Find `app/Config/database.php` and provide your database configuration parameters on `line 67` that looks like the example below:
+```php
+class DATABASE_CONFIG {
+
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => 'password',
+		'database' => 'geneo',
+		'prefix' => '',
+		//'encoding' => 'utf8',
+	);
+
+	public $test = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => 'password',
+		'database' => 'geneo_test',
+		'prefix' => '',
+		//'encoding' => 'utf8',
+	);
+}
+```
+- Go to your browser and fire up your application using the server link depending on your server configurations, example of mine is: `localhost/geneo-test/messages/add`
+- Fill the form to submit a message.
+- You can also run test cases by going to: `localhost/geneo-test/test.php`
 
 
-## Some Handy Links
-
-[CakePHP](https://cakephp.org) - The rapid development PHP framework
-
-[CookBook](https://book.cakephp.org) - THE CakePHP user documentation; start learning here!
-
-[API](https://api.cakephp.org) - A reference to CakePHP's classes
-
-[Plugins](https://plugins.cakephp.org) - A repository of extensions to the framework
-
-[The Bakery](https://bakery.cakephp.org) - Tips, tutorials and articles
-
-[Community Center](https://community.cakephp.org) - A source for everything community related
-
-[Training](https://training.cakephp.org) - Join a live session and get skilled with the framework
-
-[CakeFest](https://cakefest.org) - Don't miss our annual CakePHP conference
-
-[Cake Software Foundation](https://cakefoundation.org) - Promoting development related to CakePHP
-
-
-## Get Support!
-
-[#cakephp](https://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
-
-[Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
-
-[GitHub Issues](https://github.com/cakephp/cakephp/issues) - Got issues? Please tell us!
-
-[Roadmaps](https://github.com/cakephp/cakephp/wiki#roadmaps) - Want to contribute? Get involved!
-
-
-## Contributing
-
-[CONTRIBUTING.md](CONTRIBUTING.md) - Quick pointers for contributing to the CakePHP project
-
-[CookBook "Contributing" Section (2.x)](https://book.cakephp.org/2.0/en/contributing.html) [(3.x)](https://book.cakephp.org/3.0/en/contributing.html) - Version-specific details about contributing to the project
+I hope you're able to set it up without any issues but if any issue arises please feel free t contact me: faraweilyas@gmail.com or @[faraweilyas.com](https://faraweilyas.com), cheers 🥂.
