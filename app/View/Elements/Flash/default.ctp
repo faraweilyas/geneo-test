@@ -1,1 +1,6 @@
-<div id="<?php echo $key; ?>Message" class="<?php echo !empty($params['class']) ? $params['class'] : 'message'; ?>"><?php echo $message; ?></div>
+<span
+	id="<?= $key; ?>Message"
+	class='message message-<?= !empty($params['class']) ? $params['class'] : 'message'; ?>'
+>
+	<?= $message; ?>
+</span>
